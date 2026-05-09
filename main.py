@@ -87,6 +87,15 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
+@app.get("/")
+def root() -> dict[str, str]:
+    return {
+        "status": "ok",
+        "health": "/health",
+        "chat": "/chat",
+    }
+
+
 @app.post("/chat")
 def chat(payload: Any = Body(default=None)) -> dict[str, Any]:
     messages = _valid_messages(payload)
