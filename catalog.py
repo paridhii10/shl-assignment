@@ -12,10 +12,11 @@ from urllib.parse import urlparse
 from schemas import Product
 
 
+PROJECT_ROOT = Path(__file__).resolve().parent
 DEFAULT_CATALOG_PATH = Path(
     os.environ.get(
         "SHL_CATALOG_PATH",
-        r"C:\Users\HP\Downloads\SHL Assignment\shl_product_catalog.json",
+        PROJECT_ROOT / "data" / "shl_product_catalog.json",
     )
 )
 

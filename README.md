@@ -22,13 +22,13 @@ Install dependencies:
 python -m pip install -r requirements.txt
 ```
 
-The app expects the SHL catalogue at:
+The app includes the SHL catalogue at:
 
 ```text
-C:\Users\HP\Downloads\SHL Assignment\shl_product_catalog.json
+data/shl_product_catalog.json
 ```
 
-To use another path, set:
+By default, `catalog.py` loads that repository-local file so hosted deployments do not depend on a local Windows Downloads path. To use another path, set:
 
 ```powershell
 $env:SHL_CATALOG_PATH="C:\path\to\shl_product_catalog.json"
@@ -123,7 +123,7 @@ OK
 Use any Python web host that supports FastAPI/Uvicorn, such as Render, Railway, Fly.io, or Hugging Face Spaces. Ensure:
 
 - `requirements.txt` is installed.
-- The catalogue JSON is included or `SHL_CATALOG_PATH` points to it.
+- The catalogue JSON is included at `data/shl_product_catalog.json` or `SHL_CATALOG_PATH` points to it.
 - The service start command is similar to:
 
 ```bash
